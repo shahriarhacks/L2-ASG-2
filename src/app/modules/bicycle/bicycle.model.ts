@@ -55,7 +55,9 @@ const bicycleSchema = new Schema<IBiCycle>(
    { timestamps: true },
 );
 
+// eslint-disable-next-line consistent-return
 bicycleSchema.pre("save", function (next) {
+   // eslint-disable-next-line @typescript-eslint/no-this-alias
    const bicycle = this;
    if (bicycle.quantity < 0) {
       return next(new Error("Quantity cannot be negative!"));
@@ -64,4 +66,4 @@ bicycleSchema.pre("save", function (next) {
    next();
 });
 
-export const Bicycle = model<IBiCycle>("Bicycle", bicycleSchema);
+export const Product = model<IBiCycle>("Product", bicycleSchema);

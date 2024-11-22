@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from "express";
 import cors from "cors";
 import { globalErrorHandler } from "./app/middleware/globalErrorHandler";
 import { notFoundRoute } from "./app/middleware/notFoundRoute";
+import { BicycleRouter } from "./app/modules/bicycle/bicycle.routes";
 
 const app: Application = express();
 
@@ -11,6 +12,9 @@ app.use(express.urlencoded({ extended: true }));
 
 //CORS
 app.use(cors());
+
+//Application route
+app.use("/api/products", BicycleRouter);
 
 //health route
 app.get("/health", (_req: Request, res: Response) => {
