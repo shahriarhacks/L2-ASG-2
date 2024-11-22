@@ -6,6 +6,22 @@ const create = async (payload: IBiCycle): Promise<IBiCycle> => {
    return result;
 };
 
+const readAll = async (searchTerm: string | undefined): Promise<IBiCycle[]> => {
+   const result = await Product.find(
+      searchTerm
+         ? {
+              $or: [
+                 { name: searchTerm },
+                 { brand: searchTerm },
+                 { type: searchTerm },
+              ],
+           }
+         : {},
+   );
+   return result;
+};
+
 export const BicycleService = {
    create,
+   readAll,
 };
