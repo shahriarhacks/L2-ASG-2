@@ -3,10 +3,18 @@ import { BicycleController } from "./bicycle.controller";
 
 const router = Router();
 
-router.post("/", BicycleController.create);
-router.get("/", BicycleController.readAll);
+router.route("/").post(BicycleController.create).get(BicycleController.readAll);
 
-router.get("/:productId", BicycleController.readSingle);
-router.put("/:productId", BicycleController.update);
+// router.post("/", BicycleController.create);
+// router.get("/", BicycleController.readAll);
+
+router
+   .route("/:productId")
+   .get(BicycleController.readSingle)
+   .put(BicycleController.update)
+   .delete(BicycleController.vanish);
+
+// router.get("/:productId", BicycleController.readSingle);
+// router.put("/:productId", BicycleController.update);
 
 export const BicycleRouter = router;

@@ -56,4 +56,24 @@ const update = async (req: Request, res: Response, next: NextFunction) => {
    }
 };
 
-export const BicycleController = { create, readAll, readSingle, update };
+const vanish = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const id = req.params.productId;
+      const result = await BicycleService.vanish(id);
+      res.status(200).json({
+         status: true,
+         message: "Bicycle deleted successfully",
+         data: result,
+      });
+   } catch (error) {
+      next(error);
+   }
+};
+
+export const BicycleController = {
+   create,
+   readAll,
+   readSingle,
+   update,
+   vanish,
+};

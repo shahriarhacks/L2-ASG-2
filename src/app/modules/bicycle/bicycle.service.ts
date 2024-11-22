@@ -1,3 +1,4 @@
+import { DeleteResult } from "mongoose";
 import { IBiCycle } from "./bicycle.interface";
 import { Product } from "./bicycle.model";
 
@@ -41,9 +42,15 @@ const update = async (
    return result;
 };
 
+const vanish = async (id: string): Promise<DeleteResult> => {
+   const result = await Product.deleteOne({ _id: id }, { new: true });
+   return result;
+};
+
 export const BicycleService = {
    create,
    readAll,
    readSingle,
    update,
+   vanish,
 };
