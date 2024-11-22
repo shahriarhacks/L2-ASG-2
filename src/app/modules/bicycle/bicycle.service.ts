@@ -26,8 +26,24 @@ const readSingle = async (id: string): Promise<IBiCycle | null> => {
    return result;
 };
 
+const update = async (
+   id: string,
+   payload: Partial<IBiCycle>,
+): Promise<IBiCycle | null> => {
+   const result = await Product.findOneAndUpdate({ _id: id }, payload, {
+      new: true,
+   });
+   if (result && result?.quantity <= 0) {
+      result.inStock = false;
+      result.quantity = 0;
+   }
+   await result?.save();
+   return result;
+};
+
 export const BicycleService = {
    create,
    readAll,
    readSingle,
+   update,
 };

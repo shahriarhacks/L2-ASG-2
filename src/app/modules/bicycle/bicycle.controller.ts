@@ -42,4 +42,18 @@ const readSingle = async (req: Request, res: Response, next: NextFunction) => {
    }
 };
 
-export const BicycleController = { create, readAll, readSingle };
+const update = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const id = req.params.productId;
+      const result = await BicycleService.update(id, { ...req.body });
+      res.status(201).json({
+         status: true,
+         message: "Bicycle updated successfully",
+         data: result,
+      });
+   } catch (error) {
+      next(error);
+   }
+};
+
+export const BicycleController = { create, readAll, readSingle, update };
