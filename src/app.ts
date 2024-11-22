@@ -3,6 +3,7 @@ import cors from "cors";
 import { globalErrorHandler } from "./app/middleware/globalErrorHandler";
 import { notFoundRoute } from "./app/middleware/notFoundRoute";
 import { BicycleRouter } from "./app/modules/bicycle/bicycle.routes";
+import { OrdersRouter } from "./app/modules/orders/orders.routes";
 
 const app: Application = express();
 
@@ -15,6 +16,7 @@ app.use(cors());
 
 //Application route
 app.use("/api/products", BicycleRouter);
+app.use("/api/orders", OrdersRouter);
 
 //health route
 app.get("/health", (_req: Request, res: Response) => {
