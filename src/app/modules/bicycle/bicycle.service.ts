@@ -21,7 +21,13 @@ const readAll = async (searchTerm: string | undefined): Promise<IBiCycle[]> => {
    return result;
 };
 
+const readSingle = async (id: string): Promise<IBiCycle | null> => {
+   const result = await Product.findById(id);
+   return result;
+};
+
 export const BicycleService = {
    create,
    readAll,
+   readSingle,
 };

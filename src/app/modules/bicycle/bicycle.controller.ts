@@ -28,4 +28,18 @@ const readAll = async (req: Request, res: Response, next: NextFunction) => {
    }
 };
 
-export const BicycleController = { create, readAll };
+const readSingle = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const id = req.params.productId;
+      const result = await BicycleService.readSingle(id);
+      res.status(200).json({
+         status: true,
+         message: "Bicycle retrieved successfully",
+         data: result,
+      });
+   } catch (error) {
+      next(error);
+   }
+};
+
+export const BicycleController = { create, readAll, readSingle };
