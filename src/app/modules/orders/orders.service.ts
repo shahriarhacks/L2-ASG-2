@@ -22,4 +22,15 @@ const create = async (payload: IOrder) => {
    return order;
 };
 
-export const OrdersService = { create };
+const checkRevenue = async () => {
+   const result = await Order.aggregate([
+      {
+         $group: {
+            _id: null,
+            totalRevenue: { $sum: "$totalPrice" },
+         },
+      },
+   ]);
+   return result;
+};
+export const OrdersService = { create, checkRevenue };
