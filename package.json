@@ -1,29 +1,42 @@
 {
-  "name": "bi-cycle-store",
-  "version": "0.0.1",
-  "description": "Bi-Cycle store as Student id 76",
-  "main": "server.ts",
-  "scripts": {
-    "dev": "tsnd --respawn ./src/server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "L2"
-  ],
-  "author": "SHAHRIAR AHMED <shahriarhacks@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.21.1",
-    "mongoose": "^8.8.2",
-    "zod": "^3.23.8"
-  },
-  "devDependencies": {
-    "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.0",
-    "@types/node": "^22.9.1",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.6.3"
-  }
+   "name": "bi-cycle-store",
+   "version": "0.0.1",
+   "description": "Bi-Cycle store as Student id 76",
+   "main": "server.ts",
+   "scripts": {
+      "start": "node ./dist/server.js",
+      "dev": "tsnd --respawn ./src/server.ts",
+      "build": "tsc",
+      "lint": "eslint src/**/*.ts",
+      "lint:fix": "eslint src/**/*.ts --fix",
+      "prettier": "prettier . --write",
+      "prettier:fix": "npx prettier --write src"
+   },
+   "keywords": [
+      "L2"
+   ],
+   "author": "SHAHRIAR AHMED <shahriarhacks@gmail.com>",
+   "license": "MIT",
+   "dependencies": {
+      "cors": "^2.8.5",
+      "dotenv": "^16.4.5",
+      "express": "^4.21.1",
+      "mongoose": "^8.8.2",
+      "zod": "^3.23.8"
+   },
+   "devDependencies": {
+      "@eslint/js": "^9.15.0",
+      "@types/cors": "^2.8.17",
+      "@types/express": "^5.0.0",
+      "@types/node": "^22.9.1",
+      "@typescript-eslint/eslint-plugin": "^8.15.0",
+      "@typescript-eslint/parser": "^8.15.0",
+      "eslint": "^9.15.0",
+      "eslint-config-prettier": "^9.1.0",
+      "globals": "^15.12.0",
+      "prettier": "^3.3.3",
+      "ts-node-dev": "^2.0.0",
+      "typescript": "^5.6.3",
+      "typescript-eslint": "^8.15.0"
+   }
 }

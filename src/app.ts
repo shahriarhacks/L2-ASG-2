@@ -12,9 +12,9 @@ app.use(cors());
 
 //health route
 app.get("/health", (_req: Request, res: Response) => {
-  res.status(200).json({
-    success: true,
-    message: "Server Health are fine now! ",
-  });
+   res.status(200).json({
+      success: true,
+      message: "Server Health are fine now! ",
+   });
 });
 export default app;
