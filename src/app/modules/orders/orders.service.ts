@@ -30,6 +30,12 @@ const checkRevenue = async () => {
             totalRevenue: { $sum: "$totalPrice" },
          },
       },
+      {
+         $project: {
+            _id: 0,
+            totalRevenue: 1,
+         },
+      },
    ]);
    return result;
 };

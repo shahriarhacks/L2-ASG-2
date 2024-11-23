@@ -266,7 +266,7 @@ Ensure you have the following installed:
    -  `message`: string
    -  `data`: created order object
 
--  **\_Example: Body**
+-  **\_Example: Body\_**
    ```json
    {
       "email": "zg9lO@example.com",
