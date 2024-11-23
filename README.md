@@ -366,7 +366,6 @@ L2-ASG-2/
 │   │   ├── middleware/
 │   │   │   ├── globalErrorHandler.ts     # Handles application-wide errors
 │   │   │   └── notFoundRoute.ts          # Handles undefined routes
-│   │   └── app.ts                        # Express app configuration
 │   ├── modules/
 │   │   ├── bicycle/
 │   │   │   ├── bicycle.controller.ts     # Bicycle-specific business logic
@@ -384,8 +383,9 @@ L2-ASG-2/
 │   │   └── environment.ts                # Environment variables configuration
 │   ├── connection/
 │   │   ├── mongodb.ts                    # MongoDB connection setup
+│   ├── app.ts                            # Express app configuration
 │   ├── server.ts                         # Application entry point
-│
+|
 ├── .env                                  # Environment variables
 ├── .gitignore                            # Ignored files and folders for Git
 ├── .prettierrc                           # Prettier configuration
