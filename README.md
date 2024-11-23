@@ -399,6 +399,7 @@ L2-ASG-2/
 ├── package-lock.json                     # Dependency lock file
 ├── tsconfig.json                         # TypeScript configuration
 └── README.md                             # Project documentation
+└── vercel.json                            # Vercle Deployment configuration
 ```
 
 ---
