@@ -400,4 +400,5 @@ L2-ASG-2/
 ### **Example Server**
 
 -  **Deployed:** `Vercel`
--  **URL:** `https://l2-asg-2.vercel.app/`
+-  **URL:** [https://l2-asg-2.vercel.app/](https://l2-asg-2.vercel.app/)
+-  **Health Checkup Route:** [https://l2-asg-2.vercel.app/health](https://l2-asg-2.vercel.app/health)
