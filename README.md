@@ -74,6 +74,8 @@ Ensure you have the following installed:
 
 ### **API Endpoints**
 
+---
+
 \***\*Product Endpoints\*\***
 
 1. **Create a Bicycle**:
@@ -354,6 +356,8 @@ Ensure you have the following installed:
    }
    ```
 
+---
+
 ## **Folder Structure**
 
 ```graphql
@@ -397,7 +401,11 @@ L2-ASG-2/
 └── README.md                             # Project documentation
 ```
 
+---
+
 ### **Example Server**
+
+---
 
 -  **Deployed:** `Vercel`
 -  **URL:** [https://l2-asg-2.vercel.app/](https://l2-asg-2.vercel.app/)
