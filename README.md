@@ -238,17 +238,14 @@ Ensure you have the following installed:
 
    -  `status`: boolean
    -  `message`: string
-   -  `data`: deleted response
+   -  `data`: empty object
 
 -  **_Example: Response_**
    ```json
    {
       "status": true,
       "message": "Bicycle deleted successfully",
-      "data": {
-         "acknowledged": true,
-         "deletedCount": 1
-      }
+      "data": {}
    }
    ```
 
