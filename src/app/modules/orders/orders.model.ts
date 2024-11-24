@@ -9,7 +9,7 @@ const orderSchema = new Schema<IOrder>(
       quantity: { type: Number, required: true, min: 1 },
       totalPrice: { type: Number, required: true, min: 0 },
    },
-   { timestamps: true },
+   { timestamps: true, versionKey: false },
 );
 
 export const Order = mongoose.model<IOrder>("Order", orderSchema);

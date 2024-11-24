@@ -60,10 +60,17 @@ const vanish = async (req: Request, res: Response, next: NextFunction) => {
    try {
       const id = req.params.productId;
       const result = await BicycleService.vanish(id);
+      if (Object.keys(result).length === 0) {
+         throw new Error("Bicycle not found");
+      }
+      if (!result.acknowledged && result.deletedCount === 0) {
+         throw new Error("Bicycle not found");
+      }
+
       res.status(200).json({
          status: true,
          message: "Bicycle deleted successfully",
-         data: result,
+         data: {},
       });
    } catch (error) {
       next(error);

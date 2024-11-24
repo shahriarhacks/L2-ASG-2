@@ -52,7 +52,7 @@ const bicycleSchema = new Schema<IBiCycle>(
          //  required: true, I handle it on my pre middleware
       },
    },
-   { timestamps: true },
+   { timestamps: true, versionKey: false },
 );
 
 // eslint-disable-next-line consistent-return
